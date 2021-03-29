@@ -1,0 +1,17 @@
+.home {
+  padding-top: 4rem;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+  max-width: 150rem;
+
+  @media (max-width: 30rem) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}

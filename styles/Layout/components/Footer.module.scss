@@ -1,0 +1,29 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  background: white;
+  box-shadow: var(--box-shadow-short);
+  z-index: 10;
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    & > * {
+      :hover {
+        cursor: pointer;
+      }
+
+      & > svg > path {
+        transition: color 0.3s ease;
+      }
+      &:hover > svg > path {
+        color: var(--clr-primary);
+      }
+    }
+  }
+}
