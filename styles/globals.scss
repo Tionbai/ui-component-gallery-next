@@ -139,6 +139,12 @@ textarea {
   }
 }
 
+.showcase {
+  margin: auto;
+  max-width: 100%;
+  padding: 2rem;
+}
+
 .spacing {
   & > * {
     margin: 2rem 0;
@@ -153,7 +159,7 @@ textarea {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  
+
   &.center {
     margin: auto;
     align-items: center;
@@ -263,10 +269,6 @@ textarea {
 
   & > input {
     overflow: scroll;
-  }
-
-  &:focus-within {
-    box-shadow: 0 0 1pt 2pt var(--clr-primary);
   }
 
   & > svg > * {

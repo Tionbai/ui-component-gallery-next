@@ -43,6 +43,14 @@ const Nav = () => {
               className={styles.nav__list__dropdown__content__item}
               onClick={() => setMenuActive(false)}
             >
+              <Link href="/components/contact-form">
+                Contact form
+              </Link>
+            </li>
+            <li
+              className={styles.nav__list__dropdown__content__item}
+              onClick={() => setMenuActive(false)}
+            >
               <Link href="/components/newsletter-subscribe">
                 Newsletter subscribe
               </Link>

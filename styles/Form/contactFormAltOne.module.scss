@@ -1,0 +1,193 @@
+.contactForm__container {
+  margin: 0 5rem;
+  position: relative;
+  --clr-form-accent: #ffbe00;
+  --clr-form-accent-90: rgba(255, 190, 0, 0.9);
+}
+
+.contactForm {
+  max-width: 100%;
+  width: 60rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 1rem auto;
+  background: white;
+  padding: 3rem 4rem;
+  letter-spacing: 2pt;
+  position: relative;
+  box-shadow: var(--box-shadow-wide);
+
+  /* Dark background */
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: 5%;
+    width: 85%;
+    height: 140%;
+    background: #333;
+    z-index: -1;
+    box-shadow: var(--box-shadow-short);
+  }
+
+  /* Contactform title */
+  &__title {
+    margin: 1rem 0;
+    color: #555;
+    font-size: 2.5rem;
+    font-size: clamp(1.5rem, calc(1.25rem + 1vw), 2.5rem);
+    text-transform: uppercase;
+  }
+
+  /* Contactform label wrapping placeholder and input */
+  &__label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border-bottom: 1px solid var(--clr-grey);
+    border-radius: 0;
+    padding: 0.5rem 0;
+    width: 45%;
+    transition: border-bottom 0.2s ease;
+
+    /* Last label (textarea) */
+    &:last-of-type {
+      width: 100%;
+      & > textarea {
+        height: 4rem;
+      }
+    }
+
+    /* Label placeholder */
+    &__placeholder {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--clr-grey-dark);
+    }
+
+    /* Label input */
+    &__input {
+      width: 100%;
+      color: var(--clr-grey-dark);
+    }
+
+    /* Breakpoint at 20rem for label and input */
+    @media (max-width: 20rem) {
+      width: 100%;
+      &__input {
+        flex: 1;
+      }
+    }
+  }
+
+  /* Contactform button */
+  &__button {
+    position: absolute;
+    bottom: -8rem;
+    right: 2rem;
+    border-radius: 0;
+    background: var(--clr-form-accent-90);
+    transition: all 0.1s ease-out;
+    padding: 2rem 4rem;
+    letter-spacing: 2pt;
+    font-size: 1.3rem;
+
+    &:hover {
+      transform: scale(1);
+      background: var(--clr-form-accent);
+    }
+  }
+}
+
+.contactForm__map__container {
+  position: absolute;
+  right: -4rem;
+  top: 15%;
+  width: 30rem;
+  height: 20rem;
+
+  /* Contactform map */
+  .contactForm__map {
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+    box-shadow: var(--box-shadow-wide);
+    z-index: 2;
+  }
+
+  /* Contactform pin for map */
+  .contactForm__pin {
+    position: absolute;
+    top: 10%;
+    left: 48%;
+    width: 2rem;
+    height: 2rem;
+    background: radial-gradient(
+      var(--clr-form-accent),
+      var(--clr-form-accent) 30%,
+      #333 35%,
+      #333
+    );
+    z-index: 10;
+    border-radius: 50%;
+  }
+}
+
+/* Contactform "characters left" for textarea */
+.contactForm__characters {
+  display: inline-block;
+  text-align: right;
+  letter-spacing: 1pt;
+  margin-top: -1rem;
+
+  /* Dynamic number based on state */
+  &__state {
+    font-weight: bold;
+    color: var(--clr-form-accent);
+  }
+}
+
+@media (max-width: 62.5rem) {
+  // Adjust contact form when resizing
+  .contactForm__container {
+    margin: 1rem;
+    margin-top: 6rem;
+    min-width: 280px;
+  }
+
+  // Center background
+  .contactForm {
+    &:before {
+      left: 7.5%;
+    }
+  }
+
+  // Give labels 100% width when map is removed from contact form
+  .contactForm__label {
+    width: 100%;
+  }
+
+  // Center and give button 100% width
+  .contactForm__button {
+    margin: 0 -2rem;
+    width: 100%;
+  }
+
+  // Position map underneath contact form
+  .contactForm__map__container {
+    position: relative;
+    margin-top: 10rem;
+    margin-left: -4rem;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  // Position pin correctly on map when map is repositioned.
+  .contactForm__pin {
+    top: -50rem;
+    right: 45%;
+  }
+}
