@@ -96,7 +96,7 @@
       z-index: 5;
 
       & > * {
-        margin: 4rem 0;
+        margin: 3rem 0;
       }
     }
   }
@@ -482,7 +482,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        height: 60%;
+        height: auto;
         width: 40rem;
         max-width: 100%;
         z-index: 10;
@@ -520,7 +520,6 @@
         padding: 0 2rem;
 
         & > * {
-          margin: 3rem 0;
           min-width: 265px;
         }
       }
