@@ -1,0 +1,434 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&display=swap");
+.landingPageHolidays {
+  --content-height: 25rem;
+  --bottom-height: 7.5rem;
+  --menu-height: 15rem;
+  --clr-primary-light: #e0ebff;
+  --clr-primary: #078cf2;
+  --clr-primary-hover: rgb(52, 167, 238);
+
+  height: calc(100vh - 7.75rem);
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  & > *,
+  & > * > *,
+  & > * > * > *,
+  & > * > * > * > *,
+  & > * > * > * > * > * {
+    font-family: "Maven Pro", sans-serif;
+    letter-spacing: 0.25pt;
+  }
+
+  &__disableBtn {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+    font-weight: bold;
+    background-color: var(--clr-primary);
+    color: white;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    letter-spacing: 1pt;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    transition: background-color 0.1s ease;
+
+    &:hover {
+      background-color: var(--clr-primary-hover);
+    }
+
+    & > svg {
+      cursor: pointer;
+      & > path {
+        cursor: pointer;
+        color: white;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-height: 100%;
+    min-width: 100%;
+    background-size: cover;
+    z-index: -1;
+    animation: move 10s ease;
+  }
+
+  @keyframes move {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: -5rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    animation: fadeDownNav 2s ease, visibleNav 8s 2s, fadeUpNav 2s ease 10s;
+
+    &__logo {
+      background: white;
+      border-radius: 50%;
+      padding: 1.5rem;
+      font-weight: bold;
+    }
+
+    &__list {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      margin: 1rem;
+
+      &__item {
+        padding: 0.5rem 1rem;
+        margin: 0 1.5rem;
+        color: white;
+        font-weight: bold;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    &__button {
+      display: none;
+      &:hover > *,
+      &:hover > * > *,
+      &:hover > * > * > * {
+        cursor: pointer;
+      }
+    }
+  }
+
+  @keyframes fadeDownNav {
+    from {
+      top: -5rem;
+    }
+    to {
+      top: 0;
+    }
+  }
+  @keyframes visibleNav {
+    from {
+      top: 0;
+    }
+    to {
+      top: 0;
+    }
+  }
+  @keyframes fadeUpNav {
+    from {
+      top: 0;
+    }
+    to {
+      top: -5rem;
+    }
+  }
+
+  &__header {
+    flex: 1;
+    &__title {
+      width: 100%;
+      color: white;
+      margin-top: 15rem;
+      text-align: center;
+      font-size: clamp(1.3rem, calc(2rem + 1vw), 5rem);
+      animation: fadeInTitle 2s ease, visibleTitle 8s 2s,
+        fadeOutTitle 2s ease 10s;
+      opacity: 0;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  @keyframes fadeInTitle {
+    from {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+    to {
+      opacity: 100%;
+      transform: scale(1);
+    }
+  }
+  @keyframes visibleTitle {
+    from {
+      opacity: 100%;
+    }
+    to {
+      opacity: 100%;
+    }
+  }
+  @keyframes fadeOutTitle {
+    from {
+      opacity: 100%;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(1.1);
+    }
+  }
+
+  &__content {
+    background: white;
+    height: var(--content-height);
+    display: flex;
+    flex-direction: column;
+    border-radius: 4rem 4rem 0 0;
+    animation: fadeUpContent 2s ease, visibleContent 8s 2s,
+      fadeDownContent 2s 10s;
+    position: relative;
+    height: 0;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+
+    &__menu {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 4rem 4rem 0 0;
+      padding: 0 4rem;
+      flex-wrap: wrap;
+
+      &__item {
+        margin: 0 2rem;
+        &__action {
+          color: var(--clr-primary);
+          text-transform: none;
+        }
+
+        &__search {
+          & > svg {
+            width: 3rem;
+            height: 3rem;
+            padding: 0.9rem;
+            background: #333;
+            border-radius: 50%;
+            cursor: pointer;
+
+            & > path {
+              color: white;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    &__bottom {
+      box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+      width: 100%;
+      height: 0;
+      background: var(--clr-primary-light);
+      border-radius: 4rem 4rem 0 0;
+      animation: invisibleBottom 1s, fadeUpBottom 1s ease 1s,
+        visibleBottom 8s 2s, fadeDownBottom 2s ease 10s;
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes fadeUpContent {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--content-height);
+    }
+  }
+  @keyframes visibleContent {
+    from {
+      height: var(--content-height);
+    }
+    to {
+      height: var(--content-height);
+    }
+  }
+  @keyframes fadeDownContent {
+    from {
+      height: var(--content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes invisibleBottom {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes fadeUpBottom {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--bottom-height);
+    }
+  }
+  @keyframes visibleBottom {
+    from {
+      height: var(--bottom-height);
+    }
+    to {
+      height: var(--bottom-height);
+    }
+  }
+  @keyframes fadeDownBottom {
+    from {
+      height: var(--bottom-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+.landingPageHolidays__active:not(:hover) {
+  & > .landingPageHolidays__nav {
+    animation: fadeUpNav 2s ease;
+  }
+
+  & .landingPageHolidays__header__title {
+    animation: fadeOutTitle 2s ease;
+  }
+
+  & .landingPageHolidays__content {
+    animation: fadeDownContent 2s ease;
+  }
+
+  & .landingPageHolidays__content__bottom {
+    animation: fadeDownBottom 2s ease;
+  }
+}
+
+.landingPageHolidays__active:hover {
+  & > .landingPageHolidays__nav {
+    position: absolute;
+    top: 0;
+    animation: fadeDownNav 2s ease;
+  }
+
+  & .landingPageHolidays__header__title {
+    animation: fadeInTitle 2s ease;
+    opacity: 100%;
+  }
+
+  & .landingPageHolidays__content {
+    animation: fadeUpContent 2s ease;
+    height: var(--content-height);
+  }
+
+  & .landingPageHolidays__content__bottom {
+    animation: fadeUpBottom 2s ease;
+    height: var(--bottom-height);
+  }
+}
+
+.landingPageHolidays__disabled {
+  & > .landingPageHolidays__nav {
+    animation: none;
+    position: absolute;
+    top: 0;
+  }
+
+  & .landingPageHolidays__header__title {
+    animation: none;
+    opacity: 100%;
+  }
+
+  & .landingPageHolidays__content {
+    animation: none;
+    height: var(--content-height);
+  }
+
+  & .landingPageHolidays__content__bottom {
+    animation: none;
+    height: var(--bottom-height);
+  }
+}
+
+@media (max-width: 60rem) {
+  .landingPageHolidays__nav__list {
+    display: none;
+  }
+  .landingPageHolidays__nav__button {
+    display: flex;
+
+    & > svg {
+      width: 2rem;
+      height: 2rem;
+      & > path {
+        color: white;
+      }
+    }
+  }
+
+  .landingPageHolidays__content__menu {
+    justify-content: center;
+    padding: 1rem 2rem;
+
+    & > * {
+      // border: 1px solid red;
+      flex: 1;
+      min-width: 10rem;
+    }
+
+    & > :nth-child(5) {
+      text-align: center;
+      min-width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (max-width: 40rem) {
+  .landingPageHolidays,
+  .landingPageHolidays__active,
+  .landingPageHolidays__disabled {
+    min-width: 280px;
+    --bottom-height: 6rem;
+    height: calc(100vh - 7.6rem);
+  }
+
+  .landingPageHolidays__disableBtn {
+    top: 5rem;
+    bottom: auto;
+  }
+
+  .landingPageHolidays__content__menu {
+    flex-direction: column;
+    height: auto;
+
+    & > * {
+      text-align: center;
+      min-width: auto;
+      width: auto;
+      margin: 1rem auto;
+      z-index: 10;
+    }
+  }
+
+  .landingPageHolidays__content__bottom {
+    position: absolute;
+    bottom: 0;
+  }
+}

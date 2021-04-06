@@ -43,6 +43,14 @@ const Nav = () => {
               className={styles.nav__list__dropdown__content__item}
               onClick={() => setMenuActive(false)}
             >
+              <Link href="/components/landing-page-holidays">
+                Landing page holidays
+              </Link>
+            </li>
+            <li
+              className={styles.nav__list__dropdown__content__item}
+              onClick={() => setMenuActive(false)}
+            >
               <Link href="/components/landing-page-courses">
                 Landing page courses
               </Link>
