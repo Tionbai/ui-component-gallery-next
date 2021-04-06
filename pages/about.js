@@ -28,7 +28,12 @@ const about = () => {
           semantic HTML, CSS BEM and Material Design™ principles. The designs
           themselves have been found from various online sources - especially
           but not limited to{" "}
-          <a className="link" href="https://dribbble.com/">
+          <a
+            className="link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://dribbble.com/"
+          >
             Dribbble.com
           </a>
           .
