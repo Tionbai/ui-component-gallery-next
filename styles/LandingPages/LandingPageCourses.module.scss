@@ -212,6 +212,8 @@
     overflow-x: auto;
     padding: 0 2rem;
     padding-bottom: 2rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--clr-primary) #eee;
 
     &::-webkit-scrollbar {
       height: 1rem;
@@ -312,6 +314,7 @@
 
       & > svg {
         min-width: 1.5rem;
+        width: 1.5rem;
 
         & > path {
           color: #ff8f00;
@@ -329,6 +332,7 @@
 
         & > svg {
           min-width: 1.5rem;
+          width: 1.5rem;
 
           & > path {
             color: #ff8f00;
