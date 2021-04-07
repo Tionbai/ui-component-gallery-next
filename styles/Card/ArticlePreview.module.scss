@@ -1,0 +1,16 @@
+.articlePreview {
+  width: 40rem;
+  max-width: 90vw;
+
+  &__title {
+    line-height: 0.75;
+    font-size: 3.5rem;
+    word-wrap: break-word;
+    text-transform: uppercase;
+
+  @media (max-width: 42rem) {
+    font-size: clamp(1rem, calc(2rem + 1vw), 3rem);
+  }
+  }
+
+}
