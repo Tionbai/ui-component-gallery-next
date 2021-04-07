@@ -11,7 +11,7 @@ const landingPageHolidays = () => {
   // Set active state after initial animation has finished running.
   useEffect(() => {
     setTimeout(() => {
-      if (window.innerWidth > 600 && window.innerHeight > 550) {
+      if (window.innerWidth > 600 && window.innerHeight > 630) {
         // Check if animation has been disabled before triggering active state
         if (disableAnimation === false) setActive(true);
       } else {
@@ -21,7 +21,7 @@ const landingPageHolidays = () => {
 
     return () =>
       clearTimeout(() => {
-        if (window.innerWidth > 600 && window.innerHeight > 550) {
+        if (window.innerWidth > 600 && window.innerHeight > 630) {
           // Check if animation has been disabled before triggering active state
           if (disableAnimation === false) setActive(true);
         } else {
@@ -60,16 +60,19 @@ const landingPageHolidays = () => {
         active ? styles.landingPageHolidays__active : ""
       } ${disableAnimation ? styles.landingPageHolidays__disabled : ""}`}
     >
-      <img
-        className={styles.landingPageHolidays__img}
-        src="https://images.pexels.com/photos/68147/waterfall-thac-dray-nur-buon-me-thuot-daklak-68147.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-        alt=""
-      />
+      <div className={styles.landingPageHolidays__img__container}>
+        <img
+          className={styles.landingPageHolidays__img}
+          src="https://images.pexels.com/photos/68147/waterfall-thac-dray-nur-buon-me-thuot-daklak-68147.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+          alt=""
+        />
+      </div>
       <button
         className={styles.landingPageHolidays__disableBtn}
         onClick={handleDisable}
       >
-        {animationIcon} Disable animation
+        {animationIcon}{" "}
+        {!disableAnimation ? "Disable animation" : "Enable animation"}
       </button>
       <nav className={styles.landingPageHolidays__nav}>
         <a className={styles.landingPageHolidays__nav__logo} href="">
