@@ -11,14 +11,23 @@ const landingPageHolidays = () => {
   // Set active state after initial animation has finished running.
   useEffect(() => {
     setTimeout(() => {
-      // Check if animation has been disabled before triggering active state
-      if (disableAnimation === false) setActive(true);
-    }, 11000);
+      if (window.innerWidth > 600 && window.innerHeight > 550) {
+        // Check if animation has been disabled before triggering active state
+        if (disableAnimation === false) setActive(true);
+      } else {
+        setDisableAnimation(true);
+      }
+    }, 10000);
 
     return () =>
       clearTimeout(() => {
-        if (disableAnimation === false) setActive(true);
-      }, 11000);
+        if (window.innerWidth > 600 && window.innerHeight > 550) {
+          // Check if animation has been disabled before triggering active state
+          if (disableAnimation === false) setActive(true);
+        } else {
+          setDisableAnimation(true);
+        }
+      });
   }, []);
 
   const handleDisable = (e) => {
@@ -93,70 +102,62 @@ const landingPageHolidays = () => {
 
       <section className={styles.landingPageHolidays__content}>
         <ul className={styles.landingPageHolidays__content__menu}>
-            <li className={styles.landingPageHolidays__content__menu__item}>
-              <h1
-                className={
-                  styles.landingPageHolidays__content__menu__item__title
-                }
-              >
-                Location
-              </h1>
-              <button
-                className={
-                  styles.landingPageHolidays__content__menu__item__action
-                }
-              >
-                Where are you going?
-              </button>
-            </li>
-            <li className={styles.landingPageHolidays__content__menu__item}>
-              <h1
-                className={
-                  styles.landingPageHolidays__content__menu__item__title
-                }
-              >
-                Check in
-              </h1>
-              <button
-                className={
-                  styles.landingPageHolidays__content__menu__item__action
-                }
-              >
-                Add dates
-              </button>
-            </li>
-            <li className={styles.landingPageHolidays__content__menu__item}>
-              <h1
-                className={
-                  styles.landingPageHolidays__content__menu__item__title
-                }
-              >
-                Check out
-              </h1>
-              <button
-                className={
-                  styles.landingPageHolidays__content__menu__item__action
-                }
-              >
-                Add dates
-              </button>
-            </li>
-            <li className={styles.landingPageHolidays__content__menu__item}>
-              <h1
-                className={
-                  styles.landingPageHolidays__content__menu__item__title
-                }
-              >
-                Guests
-              </h1>
-              <button
-                className={
-                  styles.landingPageHolidays__content__menu__item__action
-                }
-              >
-                Add guests
-              </button>
-            </li>
+          <li className={styles.landingPageHolidays__content__menu__item}>
+            <h1
+              className={styles.landingPageHolidays__content__menu__item__title}
+            >
+              Location
+            </h1>
+            <button
+              className={
+                styles.landingPageHolidays__content__menu__item__action
+              }
+            >
+              Where are you going?
+            </button>
+          </li>
+          <li className={styles.landingPageHolidays__content__menu__item}>
+            <h1
+              className={styles.landingPageHolidays__content__menu__item__title}
+            >
+              Check in
+            </h1>
+            <button
+              className={
+                styles.landingPageHolidays__content__menu__item__action
+              }
+            >
+              Add dates
+            </button>
+          </li>
+          <li className={styles.landingPageHolidays__content__menu__item}>
+            <h1
+              className={styles.landingPageHolidays__content__menu__item__title}
+            >
+              Check out
+            </h1>
+            <button
+              className={
+                styles.landingPageHolidays__content__menu__item__action
+              }
+            >
+              Add dates
+            </button>
+          </li>
+          <li className={styles.landingPageHolidays__content__menu__item}>
+            <h1
+              className={styles.landingPageHolidays__content__menu__item__title}
+            >
+              Guests
+            </h1>
+            <button
+              className={
+                styles.landingPageHolidays__content__menu__item__action
+              }
+            >
+              Add guests
+            </button>
+          </li>
           <li className={styles.landingPageHolidays__content__menu__item}>
             <button
               className={
