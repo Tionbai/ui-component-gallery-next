@@ -197,8 +197,6 @@
     display: flex;
     flex-direction: column;
     border-radius: 4rem 4rem 0 0;
-    animation: fadeUpContent 2s ease, visibleContent 8s 2s,
-      fadeDownContent 2s 10s;
     animation: fadeUpContent 2s ease, visibleContent 8s 2s;
     position: relative;
     height: 0;
@@ -244,8 +242,7 @@
       background: var(--clr-primary-light);
       border-radius: 4rem 4rem 0 0;
       animation: invisibleBottom 1s, fadeUpBottom 1s ease 1s,
-        visibleBottom 8s 2s, fadeDownBottom 2s ease 10s;
-      animation: invisibleBottom 1s, fadeUpBottom 1s ease 1s;
+        visibleBottom 8s 2s;
       opacity: 0.5;
     }
   }
