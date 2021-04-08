@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: 1rem;
   margin: 1rem;
+  min-width: 220px;
 
   &__label {
     align-items: flex-start;
@@ -22,6 +23,28 @@
     & > textarea {
       height: 7rem;
     }
+  }
+
+  &__response__success {
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #90ee02;
+    background: #f2fde4;
+  }
+  &__response__error {
+    border: 1px solid #ee6002;
+    background: #fff2df;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+  }
+  &__response__loading {
+    border: 1px solid #bdbdbd;
+    background: #fafafa;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 1rem;
   }
 
   @media (max-width: 20rem) {
