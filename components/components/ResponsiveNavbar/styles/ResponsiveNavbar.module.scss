@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,700;0,800;1,400&display=swap");
+
+.responsiveNavbar {
+  width: 100%;
+  flex: 1;
+  background: #333;
+}
+
+.nav > * > * {
+  margin: 0 1rem;
+}
+
+.nav {
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 3.5rem;
+  font-family: "Raleway", sans-serif;
+}
+
+.logo {
+  text-transform: uppercase;
+  flex: 1;
+}
+
+.nav__list {
+  display: flex;
+  width: 20rem;
+}
+
+.nav__list.nav__list__active {
+  transition: all 0.3s ease-in-out;
+}
+
+.nav__list.nav__list__active,
+.nav__list.nav__list__inactive {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 100%;
+  width: 30rem;
+  background: #eee;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-end;
+  padding-right: 7rem;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  clip-path: ellipse(100% 100% at 100% 0%);
+}
+
+.nav__list.nav__list__active > .nav__list__item {
+  display: block;
+}
+
+.nav__list.nav__list__inactive {
+  animation: fade 0.3s ease-in-out;
+}
+
+@keyframes fade {
+  to {
+    width: 0%;
+    height: 0%;
+    padding-top: 0;
+    padding-right: 0;
+    clip-path: ellipse(100% 50% at 100% 0%);
+  }
+}
+
+.nav__list.nav__list__active > * {
+  margin: 1rem 0;
+}
+
+.nav__list__item {
+  display: none;
+  pointer-events: all;
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+}
+
+.nav__list__item:after,
+.nav__list__item.nav__list__active:after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #333;
+  transition: width 0.3s;
+}
+
+.nav__list__item:hover:after {
+  width: 100%;
+}
+
+.nav__list__item:selected {
+  color: red;
+}
+
+.burger {
+  display: block;
+  cursor: pointer;
+  background: url("../../../../public/assets/Nav/menu-24px.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.burger__active {
+  background: url("../../../../public/assets/Nav/close-24px.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@media (min-width: 42rem) {
+  .nav__list__active {
+    display: none;
+  }
+  .nav__list__item {
+    display: block;
+  }
+  .burger {
+    display: none;
+  }
+}
+
+@media (max-width: 30rem) {
+  .nav__list.nav__list__active,
+  .nav__list.nav__list__inactive {
+    padding-right: 20%;
+    clip-path: ellipse(100% 100% at 50% 50%);
+    transition: all 0.5s ease-in-out;
+    padding-bottom: 100vh;
+  }
+}

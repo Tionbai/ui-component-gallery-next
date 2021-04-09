@@ -159,7 +159,10 @@ const LandingPageCourses = () => {
         <section className={styles.landingPageCourses__main__courses}>
           {courses.map((course) => {
             return (
-              <article className={styles.landingPageCourses__course}>
+              <article
+                key={course.title}
+                className={styles.landingPageCourses__course}
+              >
                 <div
                   className={styles.landingPageCourses__course__img__container}
                 >
@@ -220,7 +223,7 @@ const LandingPageCourses = () => {
         <section className={styles.landingPageCourses__main__ads}>
           {ads.map((ad) => {
             return (
-              <article className={styles.landingPageCourses__ad}>
+              <article key={ad.title} className={styles.landingPageCourses__ad}>
                 <span className={styles.landingPageCourses__ad__img}>
                   {ad.icon}
                 </span>
@@ -241,7 +244,10 @@ const LandingPageCourses = () => {
         <section className={styles.landingPageCourses__main__reviews}>
           {reviews.map((review) => {
             return (
-              <article className={styles.landingPageCourses__review}>
+              <article
+                key={review.author}
+                className={styles.landingPageCourses__review}
+              >
                 <p className={styles.landingPageCourses__review__body}>
                   {review.description}
                 </p>

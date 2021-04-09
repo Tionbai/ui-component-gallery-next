@@ -81,6 +81,14 @@ const Nav = () => {
                 Newsletter subscribe
               </Link>
             </li>
+            <li
+              className={styles.nav__list__dropdown__content__item}
+              onClick={() => setMenuActive(false)}
+            >
+              <Link href="/components/responsive-navbar">
+                Responsive navbar
+              </Link>
+            </li>
           </ul>
         </div>
         <li
