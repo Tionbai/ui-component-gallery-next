@@ -1,6 +1,6 @@
 import Meta from "../components/Layout/components/Meta";
 import styles from "../styles/Contact/Contact.module.scss";
-import ContactForm from "../components/Form/ContactForm";
+import ContactForm from "../components/ContactForm/ContactForm";
 
 const contact = () => {
   return (

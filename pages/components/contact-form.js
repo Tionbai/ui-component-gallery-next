@@ -1,6 +1,6 @@
 import React from "react";
-import ContactFormAltOne from "../../components/Form/ContactFormAltOne";
 import Meta from "../../components/Layout/components/Meta";
+import ContactFormAltOne from "../../components/components/ContactFormAltOne/ContactFormAltOne";
 
 const contactForm = () => {
   return (

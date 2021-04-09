@@ -59,15 +59,19 @@ const Nav = () => {
               className={styles.nav__list__dropdown__content__item}
               onClick={() => setMenuActive(false)}
             >
-              <Link href="/components/card-article-preview">
-                Card article preview
-              </Link>
+              <Link href="/components/article-preview">Article preview</Link>
             </li>
             <li
               className={styles.nav__list__dropdown__content__item}
               onClick={() => setMenuActive(false)}
             >
               <Link href="/components/contact-form">Contact form</Link>
+            </li>
+            <li
+              className={styles.nav__list__dropdown__content__item}
+              onClick={() => setMenuActive(false)}
+            >
+              <Link href="/components/customer-status">Customer status</Link>
             </li>
             <li
               className={styles.nav__list__dropdown__content__item}

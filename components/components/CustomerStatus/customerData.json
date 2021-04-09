@@ -1,0 +1,34 @@
+[
+  {
+    "status": "Venter på tilbud",
+    "kundeaksjonspunkt": null
+  },
+  {
+    "status": "Tilbud opprettet",
+    "kundeaksjonspunkt": "Se over og gå videre med tilbud"
+  },
+  {
+    "status": "Tilbud akseptert",
+    "kundeaksjonspunkt": "Book befaring"
+  },
+  {
+    "status": "Venter på endelig tilbud",
+    "kundeaksjonspunkt": null
+  },
+  {
+    "status": "Endelig tilbud opprettet",
+    "kundeaksjonspunkt": "Godta endelig tilbud og velg overtakelsesdato"
+  },
+  {
+    "status": "Venter på overtakelse",
+    "kundeaksjonspunkt": "Fyll ut egenerklæringsskjema"
+  },
+  {
+    "status": "Venter på overtagelse",
+    "kundeaksjonspunkt": "Signer kontrakter"
+  },
+  {
+    "status": "Avsluttet",
+    "kundeaksjonspunkt": null
+  }
+]

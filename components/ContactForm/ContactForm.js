@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../../styles/Form/contactForm.module.scss";
+import styles from "./styles/ContactForm.module.scss";
 import { personIcon, mailIcon, messageIcon, sendIcon } from "../Icons";
 
 const initialValues = {
@@ -8,7 +8,7 @@ const initialValues = {
   message: "",
 };
 
-const Form = () => {
+const ContactForm = () => {
   const [values, setValues] = useState(initialValues);
   const [response, setResponse] = useState({
     success: false,
@@ -174,4 +174,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default ContactForm;

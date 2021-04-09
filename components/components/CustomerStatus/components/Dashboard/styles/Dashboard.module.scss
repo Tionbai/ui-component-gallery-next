@@ -1,0 +1,67 @@
+.Dashboard {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-bottom: 1px solid #eee;
+  background: white;
+
+  &__container {
+    width: 50%;
+    max-width: 30rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__action {
+    width: 15rem;
+    transition: all 0.1s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > p,
+    & > svg,
+    & > svg * {
+      cursor: pointer;
+      transition: all 0.1s ease;
+    }
+
+    & > p {
+      font-weight: bold;
+    }
+
+    & > svg {
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    &:hover {
+
+      & > p,
+      > svg > :last-child {
+        color: #6f6f6f;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__action {
+      & > p {
+        display: none;
+      }
+    }
+  }
+}
+
+.disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}

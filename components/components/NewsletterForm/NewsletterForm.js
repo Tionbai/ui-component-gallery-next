@@ -1,7 +1,7 @@
-import { mailIcon } from "../Icons";
-import styles from "../../styles/Form/NewsletterForm.module.scss";
+import { mailIcon } from "../../Icons";
+import styles from "./styles/NewsletterForm.module.scss";
 
-const Newsletter = () => {
+const NewsletterForm = () => {
   const handleSubmit = () => {};
   return (
     <article className={styles.newsletter}>
@@ -24,4 +24,4 @@ const Newsletter = () => {
   );
 };
 
-export default Newsletter;
+export default NewsletterForm;
