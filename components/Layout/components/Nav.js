@@ -43,22 +43,6 @@ const Nav = () => {
               className={styles.nav__list__dropdown__content__item}
               onClick={() => setMenuActive(false)}
             >
-              <Link href="/components/landing-page-courses">
-                Landing page courses
-              </Link>
-            </li>
-            <li
-              className={styles.nav__list__dropdown__content__item}
-              onClick={() => setMenuActive(false)}
-            >
-              <Link href="/components/landing-page-holidays">
-                Landing page holidays
-              </Link>
-            </li>
-            <li
-              className={styles.nav__list__dropdown__content__item}
-              onClick={() => setMenuActive(false)}
-            >
               <Link href="/components/article-preview">Article preview</Link>
             </li>
             <li
@@ -91,9 +75,7 @@ const Nav = () => {
               className={styles.nav__list__dropdown__content__item}
               onClick={() => setMenuActive(false)}
             >
-              <Link href="/components/progress-bar">
-                Progress bar
-              </Link>
+              <Link href="/components/progress-bar">Progress bar</Link>
             </li>
             <li
               className={styles.nav__list__dropdown__content__item}
@@ -101,6 +83,39 @@ const Nav = () => {
             >
               <Link href="/components/responsive-navbar">
                 Responsive navbar
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div
+          className={`${styles.nav__list__item} ${styles.nav__list__dropdown}`}
+        >
+          <li className={styles.nav__list__dropdown__btn}>
+            Landing Pages{expandMoreIcon}
+          </li>
+          <ul className={styles.nav__list__dropdown__content}>
+            <li
+              className={styles.nav__list__dropdown__content__item}
+              onClick={() => setMenuActive(false)}
+            >
+              <Link href="/landing-pages/landing-page-courses">
+                Landing page courses
+              </Link>
+            </li>
+            <li
+              className={styles.nav__list__dropdown__content__item}
+              onClick={() => setMenuActive(false)}
+            >
+              <Link href="/landing-pages/landing-page-holidays">
+                Landing page holidays
+              </Link>
+            </li>
+            <li
+              className={styles.nav__list__dropdown__content__item}
+              onClick={() => setMenuActive(false)}
+            >
+              <Link href="/landing-pages/landing-page-video">
+                Landing page video
               </Link>
             </li>
           </ul>

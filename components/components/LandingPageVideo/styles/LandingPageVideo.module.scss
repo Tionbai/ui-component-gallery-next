@@ -1,0 +1,262 @@
+.landing {
+  flex: 1;
+  --overlay-color: #03a9f4;
+  --dark-color: #191919;
+  right: 0;
+  word-break: break-word;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--dark-color);
+  z-index: 2;
+  transition: 0.5s;
+  position: relative;
+
+  & > * > * {
+    color: white;
+  }
+}
+
+.landing.landing__active {
+  right: 300px;
+}
+
+.landing__header {
+  width: 100%;
+  padding: 40px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+.landing__logo {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.menu__toggle {
+  background: url("../../../../public/assets/Nav/menu-24px.svg");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  cursor: pointer;
+  filter: invert(100%);
+  width: 2rem;
+  height: 2rem;
+  right: 6rem;
+  position: absolute;
+  transition: right 0.5s ease;
+}
+
+.menu__toggle.menu__active {
+  background: url("../../../../public/assets/Nav/close-24px.svg");
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  z-index: 10;
+  filter: invert(0);
+  right: -10rem;
+}
+
+.landing__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.landing__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-color);
+  mix-blend-mode: overlay;
+  z-index: 0;
+}
+
+.landing__text {
+  width: 100%;
+  padding: 0 100px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+
+  & > * + * {
+    margin-top: 1.5rem;
+  }
+
+  &__title {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1em;
+    text-transform: uppercase;
+  }
+
+  &__body {
+    font-size: 1rem;
+    font-weight: 400;
+    max-width: 700px;
+    letter-spacing: 0.5pt;
+    line-height: 1.6;
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 1.1rem;
+    background: #fff;
+    padding: 1rem 2rem;
+    color: var(--dark-color);
+    text-transform: uppercase;
+    letter-spacing: 1.5pt;
+    transition: 0.2s;
+    font-weight: bold;
+
+    &:hover {
+      letter-spacing: 3pt;
+    }
+  }
+}
+
+.landing__social {
+  padding: 0 100px;
+  z-index: 4;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  color: white;
+
+  &__item {
+    list-style: none;
+
+    &__link {
+      display: inline-block;
+      margin: 20px;
+      transition: 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-0.5rem);
+      }
+
+      & > svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+
+      & > svg,
+      & > svg > * {
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    position: relative;
+    list-style: none;
+
+    &__link {
+      text-decoration: none;
+      font-size: 24px;
+      color: #111;
+
+      &:hover {
+        color: var(--overlay-color);
+      }
+    }
+  }
+}
+
+@media (max-width: 798px) {
+  .landing__header,
+  .landing__text,
+  .landing__social {
+    padding: 40px;
+  }
+
+  .landing__text__title {
+    font-size: 3rem;
+  }
+
+  .landing__text__subtitle {
+    font-size: 2rem;
+  }
+  .menu__toggle {
+    position: static;
+
+    &.menu__active {
+      position: absolute;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .menu__toggle.menu__active {
+    top: 2rem;
+    filter: invert(0);
+    z-index: 5;
+  }
+}
+
+@media (max-width: 350px) {
+  .landing__header,
+  .landing__text,
+  .landing__social {
+    padding: 20px;
+  }
+
+  .landing__social {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .landing__text__title {
+    font-size: 2rem;
+  }
+
+  .landing__text__subtitle {
+    font-size: 1rem;
+  }
+
+  .landing__text__body {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  .menu {
+    width: 100%;
+    min-width: 280px;
+  }
+}
