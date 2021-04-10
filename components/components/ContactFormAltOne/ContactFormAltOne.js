@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles/contactFormAltOne.module.scss";
+import styles from "./styles/ContactFormAltOne.module.scss";
 
 const Form = () => {
   const handleSubmit = () => {};
