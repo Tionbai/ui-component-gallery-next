@@ -1,0 +1,95 @@
+.progressBar {
+  @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+  flex: 1;
+  width: 100%;
+  background: linear-gradient(150deg, #004280, #0b0a63);
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.progress__bar__container,
+.progress__bar {
+  border-radius: 1.5rem;
+}
+
+.progress__bar__container {
+  width: 95%;
+  max-width: 500px;
+  background-color: #111;
+  border: 2px solid #111;
+  position: relative;
+  height: 2.5rem;
+  box-shadow: rgba(17, 17, 17, 0.35) 0px 5px 15px;
+  letter-spacing: 0.025rem;
+}
+
+.progress__bar,
+.progress__bar__inner {
+  max-width: 100%;
+  transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  width: 0%;
+}
+
+.progress__bar {
+  height: 100%;
+  background-color: white;
+  
+  &::-ms-progress-value {
+    background: none;
+  }
+  
+  &::-ms-progress-bar {
+    background: none;
+  }
+  
+  &::-webkit-progress-bar {
+    background: none;
+  }
+  
+  &::-webkit-progress-value {
+    background: none;
+  }
+  
+  &::-moz-progress-value {
+    background: none;
+  }
+  
+  &::-moz-progress-bar {
+    background: none;
+  }
+  
+  &progress::-ms-fill {
+    background: none;
+    border: none;
+  }
+}
+
+.progress__bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  padding: 0 0.5rem;
+  z-index: 1;
+  font-family: "Quicksand", sans-serif;
+}
+
+@media (max-width: 280px) {
+  .app {
+    width: 280px;
+  }
+}

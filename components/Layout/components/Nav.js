@@ -77,8 +77,22 @@ const Nav = () => {
               className={styles.nav__list__dropdown__content__item}
               onClick={() => setMenuActive(false)}
             >
+              <Link href="/components/digital-clock">Digital Clock</Link>
+            </li>
+            <li
+              className={styles.nav__list__dropdown__content__item}
+              onClick={() => setMenuActive(false)}
+            >
               <Link href="/components/newsletter-subscribe">
                 Newsletter subscribe
+              </Link>
+            </li>
+            <li
+              className={styles.nav__list__dropdown__content__item}
+              onClick={() => setMenuActive(false)}
+            >
+              <Link href="/components/progress-bar">
+                Progress bar
               </Link>
             </li>
             <li
