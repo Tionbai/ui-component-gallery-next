@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap");
+
+.landingPageHatShop {
+  width: 100%;
+  background: white;
+
+  & > * > *,
+  & > * > * > *,
+  & > * > * > * > * > *,
+  & > * > * > * > * > * > * {
+    font-family: "Work Sans", sans-serif;
+  }
+}
+
+.featured__container {
+  width: 100%;
+  background: #eee;
+}
+
+.featured,
+.products {
+  padding: 7em 0;
+  line-height: 1.6;
+  width: 85%;
+  max-width: 65em;
+  margin: 0 auto;
+
+  &__img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+.split {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  & > * {
+    flex-basis: 30%;
+    min-width: 15em;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  border-radius: 0.25em;
+  background: var(--clr-accent, blue);
+  color: var(--clr-text, #fff);
+  transition: transform 0.25s ease-in-out, opacity 0.25s linear;
+  letter-spacing: 1pt;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+.header {
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 15em 0;
+  background-image: url("../../../../public/assets/LandingPageHatShop/hat0.png"),
+    radial-gradient(#444, #111);
+  background-repeat: no-repeat;
+  background-position: center 25%;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+
+  &__title {
+    font-size: 4rem;
+    font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  &__description {
+    letter-spacing: 0.5pt;
+  }
+
+  & > * + * {
+    margin-top: var(--spacer, 2rem);
+    color: white;
+  }
+
+  @supports not (background-blend-mode: multiply) {
+    background: #222;
+  }
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  line-height: 1;
+  color: #17353d;
+  margin-bottom: 5rem;
+}
+
+.featured__item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transform: scale(0.85);
+  transition: transform 0.25s ease-in-out;
+  color: #333;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    transform: scale(1);
+  }
+
+  &:hover .featured__details,
+  &:focus .featured__details {
+    opacity: 1;
+    text-shadow: 0 0 2em rgba(255, 255, 255, 1);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 7.5%;
+    left: 17.5%;
+    padding: 60% 60% 0 0;
+    background: #2193b0;
+    border-radius: 50%;
+    z-index: -1;
+  }
+}
+
+.featured__details {
+  z-index: 1;
+  text-align: center;
+  opacity: 0;
+  transition: 0.25s linear;
+  letter-spacing: 0.5pt;
+  margin-top: 0.5rem;
+
+  &__price {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.2;
+    display: block;
+  }
+}
+
+.featured__img__container {
+  height: 10em;
+  padding-top: 1.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products {
+  background: white;
+  width: 100%;
+}
+
+.product {
+  background: radial-gradient(
+    var(--clr-inner, limegreen),
+    var(--clr-outer, purple)
+  );
+  padding: 3em;
+  border-radius: 1em;
+  margin-bottom: 3em;
+  text-align: center;
+
+  &__title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
+  }
+
+  &__description {
+    letter-spacing: 0.5pt;
+  }
+
+  & > * + * {
+    margin-top: var(--spacer, 2rem);
+  }
+}
+
+.header {
+  --clr-accent: #faa700;
+}
+
+.hat__1 {
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #a1173c;
+}
+
+.hat__2 {
+  --clr-inner: #fce4b3;
+  --clr-outer: #eac886;
+  --clr-accent: #2f4858;
+}
+
+.hat__3 {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #008951;
+}
+
+@media (min-width: 45em) {
+  .product {
+    text-align: left;
+
+    &__title {
+      margin: 0;
+    }
+
+    &__img {
+      float: right;
+      width: 65%;
+      shape-outside: circle(
+        url("../../../../public/assets/LandingPageHatShop/hat4.png")
+      );
+      shape-margin: 1em;
+      max-width: 30em;
+      margin-top: -9em;
+    }
+  }
+}

@@ -106,6 +106,14 @@ const Nav = () => {
               className={styles.nav__list__dropdown__content__item}
               onClick={() => setMenuActive(false)}
             >
+              <Link href="/landing-pages/landing-page-hat-shop">
+                Landing page hat shop
+              </Link>
+            </li>
+            <li
+              className={styles.nav__list__dropdown__content__item}
+              onClick={() => setMenuActive(false)}
+            >
               <Link href="/landing-pages/landing-page-holidays">
                 Landing page holidays
               </Link>
